@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101325">
+  <meta name="description" content="在夜色下转动回忆树，从不同角度看它的根系、枝杈和树冠。">
+  <title>星湖里的回忆树 · 我们的星轨</title>
+  <link rel="icon" href="assets/stars.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="tree-preview.css">
+  <script src="vendor/three.min.js" defer></script>
+  <script src="tree-preview.js" defer></script>
+</head>
+<body>
+  <main class="lake" aria-labelledby="lake-title">
+    <div class="lake-plate" aria-hidden="true"></div>
+    <canvas id="tree-canvas" aria-label="可旋转的三维回忆树"></canvas>
+    <div class="lake-shade" aria-hidden="true"></div>
+    <header class="lake-header">
+      <a class="lake-brand" href="index.html">
+        <svg viewBox="0 0 38 38" fill="none" aria-hidden="true">
+          <circle cx="19" cy="19" r="12" />
+          <ellipse cx="19" cy="19" rx="17" ry="6" transform="rotate(-34 19 19)" />
+          <path d="M28 4v8m-4-4h8" />
+        </svg>
+        <span>我们的星轨<small>OUR STELLAR ORBIT</small></span>
+      </a>
+      <span class="lake-study"><i></i> 场景预览 <b>01</b></span>
+    </header>
+    <section class="lake-intro">
+      <p class="lake-kicker"><span>03</span> <i></i> THE LOVE TREE</p>
+      <h1 id="lake-title">星湖里的<br><em>回忆树</em></h1>
+      <p class="lake-line">那些寻常的日子，<br class="desktop-break">后来都长成了枝叶。</p>
+    </section>
+    <footer class="lake-footer">
+      <p id="tree-help">拖动绕树 · 滚轮缩放</p>
+      <div class="lake-controls" role="group" aria-label="回忆树视角" aria-describedby="tree-help">
+        <button type="button" data-angle="front" aria-pressed="true"><span>01</span> 正面</button>
+        <button type="button" data-angle="side" aria-pressed="false"><span>02</span> 侧面</button>
+      </div>
+      <p class="lake-coordinate" id="tree-angle" aria-hidden="true">000° <span>／</span> FRONT</p>
+      <p class="sr-only" id="tree-status" role="status"></p>
+    </footer>
+  </main>
+</body>
+</html>

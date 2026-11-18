@@ -1,0 +1,44 @@
+Our Stellar Orbit - character asset provenance
+Prepared: 2026-11-07
+
+wsq.glb
+Original: AvatarSample_C, published by the VRoid Project / pixiv Inc.
+Official model page:
+https://hub.vroid.com/en/characters/1248981995540129234/models/8640547963669442173
+Publisher's license conditions:
+https://vroid.pixiv.help/hc/en-us/articles/4402394424089-VRoidPreset-A-Z
+This asset is NOT CC0. Copyright remains with the original rights holder.
+The publisher permits use in applications, modification and free redistribution,
+including commercial use; attribution is not required. The original conditions
+must remain applicable. Do not sell the source model, relabel it CC0, use it to
+operate a character-creation service, or imply endorsement by pixiv.
+Actual source binary redistribution mirror:
+https://raw.githubusercontent.com/madjin/vrm-samples/master/vroid/stable/AvatarSample_C.vrm
+
+lyp.glb
+Original: Victoria Rubin / beta AvatarSample_4, VRoid Project / pixiv Inc.
+Official model page:
+https://hub.vroid.com/en/characters/2792872861023597723/models/5013769147837660446
+Publisher's explicit CC0 declaration:
+https://vroid.pixiv.help/hc/en-us/articles/360014900233
+CC0 1.0 Universal:
+https://creativecommons.org/publicdomain/zero/1.0/
+Actual source binary redistribution mirror:
+https://raw.githubusercontent.com/madjin/vrm-samples/master/vroid/beta/Victoria_Rubin.vrm
+
+Adaptations for this website:
+- Standard glTF 2.0 GLB conversion, with the original skin joints, bind matrices,
+  rest transforms and mesh geometry retained except the separate green hair ribbon.
+- Unused VRM metadata, facial morph targets, thumbnail and textures removed.
+- Same-material primitives combined; textures resized to a maximum of 1024 pixels
+  and encoded as palette PNG while retaining their alpha masks.
+- Materials converted to nonmetallic, lit PBR surfaces.
+- Male upper clothing recolored cream; female clothing recolored rose pink and
+  hair chestnut brown. The female green ribbon material/geometry was omitted.
+- Humanoid names stored in asset.extras.humanoid and companion bone-map JSON.
+
+Verification:
+The publisher's pages above were independently checked on 2026-11-07. Embedded
+source titles and license fields match the candidates. The source binaries came
+from the public mirror above; no publisher checksum was available for comparison.
+This file is a provenance summary, not a replacement for the linked licenses.

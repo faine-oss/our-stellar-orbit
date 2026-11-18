@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b19">
+  <meta name="description" content="我们的星轨是一座可以旋转的恋爱纪念星空，用照片、回忆和信收藏在一起的每一天。">
+  <title>我们的星轨</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="scene.js" defer></script>
+  <script src="collections.js" defer></script>
+  <script src="vendor/three.min.js" defer></script>
+  <script src="love-tree.js" defer></script>
+  <script src="vendor/gltf-loader.js" defer></script>
+  <script src="journey-prince-head.js" defer></script>
+  <script src="journey-prince.js" defer></script>
+  <script src="journey-princess.js" defer></script>
+  <script src="journey-expression.js" defer></script>
+  <script src="journey-acting.js" defer></script>
+  <script src="couple-rig.js" defer></script>
+  <script src="couple-toon.js" defer></script>
+  <script src="couple-3d.js" defer></script>
+  <script src="journey.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-orbit" viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><ellipse cx="16" cy="16" rx="15" ry="5" transform="rotate(-34 16 16)"/><path d="M17 10v8m-4-4h8"/><circle cx="25.5" cy="9" r="2" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-galaxy" viewBox="0 0 24 24"><path d="M11.5 12.5c-2-2 1-5 4-4.5 4 .6 4.3 5.6 1 8-3.5 2.6-8.2 2.3-11.1.2M12.5 11.5c2 2-1 5-4 4.5-4-.6-4.3-5.6-1-8 3.5-2.6 8.2-2.3 11.1-.2"/><circle cx="12" cy="12" r=".8" fill="currentColor" stroke="none"/><path d="M20 4v3m-1.5-1.5h3M4 17v3m-1.5-1.5h3"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.5 9.2c0 4.2-8.5 9.4-8.5 9.4S3.5 13.4 3.5 9.2A4.3 4.3 0 0 1 12 8a4.3 4.3 0 0 1 8.5 1.2Z"/></symbol>
+    <symbol id="i-tree" viewBox="0 0 24 24"><path d="M12 21V6m0 6L7 9m5 8 5-4m-5-4 4-3M12 17l-5-4M9 21h6"/><path d="m7 9-2-4m12 8 3-2M7 13l-3-1m12-6 1-3"/><circle cx="12" cy="4" r="1.2"/></symbol>
+    <symbol id="i-fireworks" viewBox="0 0 24 24"><path d="M12 3v4m0 10v4M3 12h4m10 0h4M5.6 5.6l2.7 2.7m7.4 7.4 2.7 2.7m0-12.8-2.7 2.7m-7.4 7.4-2.7 2.7"/><circle cx="12" cy="12" r="1.4"/></symbol>
+    <symbol id="i-album" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="m5 16 4-4 4 4 2-2 4 4"/><circle cx="15.5" cy="9.5" r="1.25"/></symbol>
+    <symbol id="i-memory" viewBox="0 0 24 24"><path d="M12 4v16M12 6c-3-2-6-2-9-1v13c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1Z"/></symbol>
+    <symbol id="i-letter" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M8 4v4m8-4v4M4 11h16m-12 4h2m4 0h2"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 1.4 7m-1.4-7V5m0 5h5"/></symbol>
+    <symbol id="i-drag" viewBox="0 0 24 24"><path d="M12 3v18M3 12h18M9 6l3-3 3 3m-6 12 3 3 3-3M6 9l-3 3 3 3m12-6 3 3-3 3"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="brand">
+      <svg class="brand-icon" aria-hidden="true"><use href="#i-orbit"/></svg>
+      <div><strong>我们的星轨</strong><span>OUR STELLAR ORBIT</span></div>
+    </div>
+    <nav class="site-nav" aria-label="纪念册">
+      <button type="button" data-collection="album"><svg class="icon" aria-hidden="true"><use href="#i-album"/></svg>相册</button>
+      <button type="button" data-collection="memories"><svg class="icon" aria-hidden="true"><use href="#i-memory"/></svg>回忆</button>
+      <button type="button" data-collection="letters"><svg class="icon" aria-hidden="true"><use href="#i-letter"/></svg>写给你</button>
+    </nav>
+    <button class="date-trigger" type="button" id="date-trigger" aria-label="设置相恋日期"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><span>相恋日期</span></button>
+  </header>
+
+  <main class="observatory">
+    <section class="anniversary" aria-labelledby="counter-title">
+      <div class="eyebrow"><span></span> A LITTLE UNIVERSE FOR TWO <span></span></div>
+      <h1 id="counter-title">我们在一起的第 <span class="counter"><span id="days">—</span><span class="counter-unit">天</span></span></h1>
+      <p class="since">从 <time id="start-date" datetime="2025-06-05">2025.06.05</time> 开始<span id="date-tag"> · 示例日期</span></p>
+    </section>
+
+    <section class="stage-shell" aria-label="3D 星轨相册" data-mode="galaxy">
+      <div class="stage-orbits" aria-hidden="true"><span></span><span></span></div>
+      <canvas id="stage" tabindex="0" aria-label="3D 照片星轨。拖动或按方向键旋转，按加减键缩放星河，按方括号键切换照片，按回车打开。"></canvas>
+      <div id="opening" class="opening" role="region" aria-label="一路有你，十秒的星光旅程" hidden>
+        <canvas id="journey-canvas" aria-hidden="true"></canvas>
+        <div class="journey-caption" aria-hidden="true"><p>一路有你</p><span>从并肩的那一刻，到有你的每一天</span></div>
+        <button id="skip-opening" class="opening-skip" type="button">跳过开场 <span aria-hidden="true">→</span></button>
+        <div class="journey-progress" aria-hidden="true"><span></span></div>
+        <div class="opening-frame" aria-hidden="true">
+          <svg class="opening-orbits" viewBox="0 0 720 340" aria-hidden="true">
+            <defs>
+              <linearGradient id="opening-rose" x1="0" y1="1" x2="1" y2="0">
+                <stop stop-color="#f0adc8" stop-opacity="0"/>
+                <stop offset=".43" stop-color="#f78fb8"/>
+                <stop offset=".65" stop-color="#fff0e6"/>
+                <stop offset="1" stop-color="#ffbdcf" stop-opacity=".16"/>
+              </linearGradient>
+              <linearGradient id="opening-lilac" x1="1" y1="0" x2="0" y2="1">
+                <stop stop-color="#8d9beb" stop-opacity="0"/>
+                <stop offset=".43" stop-color="#ab9dff"/>
+                <stop offset=".65" stop-color="#eae7ff"/>
+                <stop offset="1" stop-color="#ebc9f6" stop-opacity=".16"/>
+              </linearGradient>
+              <linearGradient id="opening-gold" x1="0" y1="1" x2="1" y2="0">
+                <stop stop-color="#e695b6" stop-opacity="0"/>
+                <stop offset=".48" stop-color="#ffdfac"/>
+                <stop offset="1" stop-color="#ffd7d3" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path class="opening-orbit opening-orbit-left" pathLength="1" stroke="url(#opening-rose)" d="M12 257C129 297 281 228 360 170S513 61 643 83"/>
+            <path class="opening-orbit opening-orbit-right" pathLength="1" stroke="url(#opening-lilac)" d="M708 83C591 43 439 112 360 170S207 279 77 257"/>
+            <path class="opening-orbit opening-orbit-echo" pathLength="1" stroke="url(#opening-gold)" d="M32 225C156 275 294 240 397 155S554 66 688 80"/>
+            <path class="opening-orbit opening-orbit-echo" pathLength="1" stroke="url(#opening-lilac)" d="M691 116C565 73 452 104 344 184S163 269 32 250"/>
+            <circle class="opening-spark opening-spark-left" cx="352" cy="172" r="3.2" fill="#ffe1ef"/>
+            <circle class="opening-spark opening-spark-right" cx="368" cy="168" r="3.2" fill="#d5d9ff"/>
+          </svg>
+          <div class="opening-copy">
+            <p class="opening-kicker">OUR STELLAR ORBIT</p>
+            <div class="opening-names">
+              <span class="opening-name opening-name-left">wsq</span>
+              <span class="opening-mark">
+                <svg class="opening-heart" viewBox="0 0 40 40" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="opening-heart-pink" x1="0" y1="0" x2=".85" y2="1">
+                      <stop stop-color="#fff2e5"/>
+                      <stop offset=".53" stop-color="#ffb0cb"/>
+                      <stop offset="1" stop-color="#e36d9d"/>
+                    </linearGradient>
+                  </defs>
+                  <path fill="url(#opening-heart-pink)" stroke="#ffe4e8" stroke-width=".9" d="M20 34.4C17.7 32.6 4 24.5 4 14.8 4 9.2 8 5.5 13.2 5.5 16.4 5.5 18.9 7.2 20 9.9 21.1 7.2 23.6 5.5 26.8 5.5 32 5.5 36 9.2 36 14.8 36 24.5 22.3 32.6 20 34.4Z"/>
+                  <path fill="none" stroke="#fff6f4" stroke-opacity=".72" stroke-linecap="round" stroke-width="1.35" d="M8.5 14.4c.2-3.1 2.2-5.2 5.4-5.5"/>
+                </svg>
+              </span>
+              <span class="opening-name opening-name-right">lyp</span>
+            </div>
+            <p class="opening-caption">我们在同一条星轨上</p>
+          </div>
+        </div>
+      </div>
+      <div class="scene-index" aria-hidden="true"><span id="scene-number">01</span><span class="index-line"></span><span id="scene-english">THE GALAXY</span></div>
+      <div class="stage-help"><svg class="icon" aria-hidden="true"><use href="#i-drag"/></svg><span id="stage-help-text">拖动旋转 · 滚轮或双指缩放</span></div>
+      <div id="galaxy-controls" role="group" aria-label="星河缩放">
+        <button id="zoom-out" class="zoom-button" type="button" aria-label="缩小星河">−</button>
+        <output id="zoom-value" aria-label="当前缩放" aria-live="off">100%</output>
+        <button id="zoom-in" class="zoom-button" type="button" aria-label="放大星河">+</button>
+      </div>
+      <button id="replay-fireworks" class="reset-view fireworks-replay" type="button" aria-label="再放一次烟花" hidden><svg class="icon" aria-hidden="true"><use href="#i-fireworks"/></svg><span>再放一次</span></button>
+      <button id="reset-view" class="reset-view" type="button" aria-label="重置星空视角"><svg class="icon" aria-hidden="true"><use href="#i-reset"/></svg><span>复位视角</span></button>
+    </section>
+
+    <section class="scene-picker" aria-label="照片形态，可用左右方向键切换">
+      <p id="scene-description" aria-live="polite">把一起走过的日子，放进一条星河。</p>
+      <div class="scene-switcher">
+        <button type="button" data-mode="galaxy" aria-pressed="true"><svg class="icon" aria-hidden="true"><use href="#i-galaxy"/></svg><span>星河</span></button>
+        <button type="button" data-mode="heart" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg><span>爱心</span></button>
+        <button type="button" data-mode="tree" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-tree"/></svg><span>爱情树</span></button>
+        <button type="button" data-mode="fireworks" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-fireworks"/></svg><span>烟花</span></button>
+      </div>
+    </section>
+    <noscript><p class="no-script">开启 JavaScript 后即可旋转星轨和打开相册。</p></noscript>
+  </main>
+
+  <footer class="site-footer"><span><i></i> <span id="photo-count">60 个瞬间</span></span><button id="replay-opening" type="button" hidden><svg class="icon" aria-hidden="true"><use href="#i-reset"/></svg>重播开场</button><span>示例纪念册 <b>·</b> 新内容保存在当前浏览器</span></footer>
+
+  <dialog id="collection-dialog" aria-labelledby="collection-title"><div id="collection-content"></div></dialog>
+  <dialog id="photo-viewer" aria-labelledby="photo-viewer-title">
+    <div id="photo-viewer-stage">
+      <header class="photo-viewer-bar">
+        <h2 id="photo-viewer-title"></h2>
+        <button id="photo-viewer-close" class="ui-button" type="button" autofocus>退出全屏</button>
+      </header>
+      <img id="photo-viewer-image" alt="">
+    </div>
+  </dialog>
+  <dialog id="date-dialog" aria-labelledby="date-title">
+    <div class="modal-head">
+      <div><p class="modal-kicker">SINCE THE FIRST DAY</p><h2 id="date-title" class="modal-title">我们的开始</h2></div>
+      <button id="close-date" class="modal-close" type="button" aria-label="关闭"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+    <form id="date-form" class="modal-body collection-form">
+      <p class="modal-intro">相恋当天算第 1 天，按北京时间更新。</p>
+      <label class="field"><span>相恋日期</span><input id="date-input" name="startDate" type="date" min="1900-01-01" required></label>
+      <p id="date-status" class="status" role="status"></p>
+      <div class="modal-actions"><button class="ui-button primary" type="submit">保存日期</button></div>
+    </form>
+  </dialog>
+</body>
+</html>

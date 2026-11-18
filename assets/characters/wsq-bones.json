@@ -1,0 +1,248 @@
+{
+  "version": 1,
+  "character": "wsq",
+  "source": "AvatarSample_C",
+  "forward": [
+    0,
+    0,
+    -1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "units": "metres",
+  "restPose": "T",
+  "bounds": {
+    "min": [
+      -0.7916142,
+      -0.00003192961,
+      -0.158776373
+    ],
+    "max": [
+      0.792649269,
+      1.75613475,
+      0.169731125
+    ],
+    "height": 1.75616667961
+  },
+  "bones": {
+    "hips": {
+      "node": 3,
+      "name": "J_Bip_C_Hips"
+    },
+    "leftUpperLeg": {
+      "node": 79,
+      "name": "J_Bip_L_UpperLeg"
+    },
+    "rightUpperLeg": {
+      "node": 91,
+      "name": "J_Bip_R_UpperLeg"
+    },
+    "leftLowerLeg": {
+      "node": 80,
+      "name": "J_Bip_L_LowerLeg"
+    },
+    "rightLowerLeg": {
+      "node": 92,
+      "name": "J_Bip_R_LowerLeg"
+    },
+    "leftFoot": {
+      "node": 88,
+      "name": "J_Bip_L_Foot"
+    },
+    "rightFoot": {
+      "node": 100,
+      "name": "J_Bip_R_Foot"
+    },
+    "spine": {
+      "node": 4,
+      "name": "J_Bip_C_Spine"
+    },
+    "chest": {
+      "node": 5,
+      "name": "J_Bip_C_Chest"
+    },
+    "neck": {
+      "node": 7,
+      "name": "J_Bip_C_Neck"
+    },
+    "head": {
+      "node": 8,
+      "name": "J_Bip_C_Head"
+    },
+    "leftShoulder": {
+      "node": 31,
+      "name": "J_Bip_L_Shoulder"
+    },
+    "rightShoulder": {
+      "node": 55,
+      "name": "J_Bip_R_Shoulder"
+    },
+    "leftUpperArm": {
+      "node": 32,
+      "name": "J_Bip_L_UpperArm"
+    },
+    "rightUpperArm": {
+      "node": 56,
+      "name": "J_Bip_R_UpperArm"
+    },
+    "leftLowerArm": {
+      "node": 33,
+      "name": "J_Bip_L_LowerArm"
+    },
+    "rightLowerArm": {
+      "node": 57,
+      "name": "J_Bip_R_LowerArm"
+    },
+    "leftHand": {
+      "node": 34,
+      "name": "J_Bip_L_Hand"
+    },
+    "rightHand": {
+      "node": 58,
+      "name": "J_Bip_R_Hand"
+    },
+    "leftToes": {
+      "node": 89,
+      "name": "J_Bip_L_ToeBase"
+    },
+    "rightToes": {
+      "node": 101,
+      "name": "J_Bip_R_ToeBase"
+    },
+    "leftEye": {
+      "node": 9,
+      "name": "J_Adj_L_FaceEye"
+    },
+    "rightEye": {
+      "node": 10,
+      "name": "J_Adj_R_FaceEye"
+    },
+    "leftThumbProximal": {
+      "node": 51,
+      "name": "J_Bip_L_Thumb1"
+    },
+    "leftThumbIntermediate": {
+      "node": 52,
+      "name": "J_Bip_L_Thumb2"
+    },
+    "leftThumbDistal": {
+      "node": 53,
+      "name": "J_Bip_L_Thumb3"
+    },
+    "leftIndexProximal": {
+      "node": 35,
+      "name": "J_Bip_L_Index1"
+    },
+    "leftIndexIntermediate": {
+      "node": 36,
+      "name": "J_Bip_L_Index2"
+    },
+    "leftIndexDistal": {
+      "node": 37,
+      "name": "J_Bip_L_Index3"
+    },
+    "leftMiddleProximal": {
+      "node": 43,
+      "name": "J_Bip_L_Middle1"
+    },
+    "leftMiddleIntermediate": {
+      "node": 44,
+      "name": "J_Bip_L_Middle2"
+    },
+    "leftMiddleDistal": {
+      "node": 45,
+      "name": "J_Bip_L_Middle3"
+    },
+    "leftRingProximal": {
+      "node": 47,
+      "name": "J_Bip_L_Ring1"
+    },
+    "leftRingIntermediate": {
+      "node": 48,
+      "name": "J_Bip_L_Ring2"
+    },
+    "leftRingDistal": {
+      "node": 49,
+      "name": "J_Bip_L_Ring3"
+    },
+    "leftLittleProximal": {
+      "node": 39,
+      "name": "J_Bip_L_Little1"
+    },
+    "leftLittleIntermediate": {
+      "node": 40,
+      "name": "J_Bip_L_Little2"
+    },
+    "leftLittleDistal": {
+      "node": 41,
+      "name": "J_Bip_L_Little3"
+    },
+    "rightThumbProximal": {
+      "node": 75,
+      "name": "J_Bip_R_Thumb1"
+    },
+    "rightThumbIntermediate": {
+      "node": 76,
+      "name": "J_Bip_R_Thumb2"
+    },
+    "rightThumbDistal": {
+      "node": 77,
+      "name": "J_Bip_R_Thumb3"
+    },
+    "rightIndexProximal": {
+      "node": 59,
+      "name": "J_Bip_R_Index1"
+    },
+    "rightIndexIntermediate": {
+      "node": 60,
+      "name": "J_Bip_R_Index2"
+    },
+    "rightIndexDistal": {
+      "node": 61,
+      "name": "J_Bip_R_Index3"
+    },
+    "rightMiddleProximal": {
+      "node": 67,
+      "name": "J_Bip_R_Middle1"
+    },
+    "rightMiddleIntermediate": {
+      "node": 68,
+      "name": "J_Bip_R_Middle2"
+    },
+    "rightMiddleDistal": {
+      "node": 69,
+      "name": "J_Bip_R_Middle3"
+    },
+    "rightRingProximal": {
+      "node": 71,
+      "name": "J_Bip_R_Ring1"
+    },
+    "rightRingIntermediate": {
+      "node": 72,
+      "name": "J_Bip_R_Ring2"
+    },
+    "rightRingDistal": {
+      "node": 73,
+      "name": "J_Bip_R_Ring3"
+    },
+    "rightLittleProximal": {
+      "node": 63,
+      "name": "J_Bip_R_Little1"
+    },
+    "rightLittleIntermediate": {
+      "node": 64,
+      "name": "J_Bip_R_Little2"
+    },
+    "rightLittleDistal": {
+      "node": 65,
+      "name": "J_Bip_R_Little3"
+    },
+    "upperChest": {
+      "node": 6,
+      "name": "J_Bip_C_UpperChest"
+    }
+  }
+}

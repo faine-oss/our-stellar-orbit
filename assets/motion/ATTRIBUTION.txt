@@ -1,0 +1,33 @@
+Motion capture: Carnegie Mellon University, CMU Graphics Lab.
+Dataset supported by NSF grant EIA-0196217.
+Original dataset and usage conditions: https://mocap.cs.cmu.edu/
+
+Used captures: subject 07, motions 07_04 and 07_05, both indexed as slow walk.
+Original source files: https://mocap.cs.cmu.edu/subjects/07/
+BVH conversion: Bruce Hahne / cgspeed, MotionBuilder-friendly release (2010).
+Conversion information: https://sites.google.com/a/cgspeed.com/cgspeed/motion-capture/cmu-bvh-conversion
+Actual downloaded conversion mirror:
+https://github.com/Shriinivas/cmubvh/tree/main/Sequence-001-009/07
+https://github.com/Shriinivas/cmubvh/blob/main/READMEFIRST.txt
+
+CMU permits including this motion data in products, including commercial products,
+but prohibits directly reselling the data, even in converted form. The BVH
+converter places no additional restrictions on the conversion. This website uses
+adapted motion curves to animate its anniversary opening, not to sell motion data.
+This is a permission/provenance summary, not a CC0 or MIT license declaration.
+
+Preparation for this project, 2026-11-07:
+- Removed the converter-added first-frame T-pose from animation playback and kept
+  it separately as the retargeting reference pose.
+- Evaluated BVH forward kinematics, retaining the original joint hierarchy and
+  reference offsets. Exported world-space bone quaternions and root-relative
+  world-space joint positions in source units.
+- Rotated the source coordinate frame by pi about Y to face -Z, and removed only
+  the initial horizontal root offset. Absolute root Y remains available.
+- Sampled every fourth captured frame (approximately 30 Hz), plus the final frame.
+  Original foot/toe positions remain at approximately 120 Hz for contact analysis.
+- No timing warp or curve smoothing was applied to these JSON source curves.
+
+Files: 07_04-walk.json and 07_05-walk.json.
+Both are continuous walking excerpts; starting and stopping are adapted by the
+website and should not be described as separately captured start/stop actions.
